@@ -17,7 +17,7 @@ const icons = {
 
 const getWeatherIcon = weatherState => {
     const sizeIcon = "4x";
-    const icon = icons [weatherState];
+    const icon = icons[weatherState];
 
     if (icon){
         return  <WeatherIcons className="wicon" name={icon} size={sizeIcon}/>
@@ -26,13 +26,20 @@ const getWeatherIcon = weatherState => {
     }
     
 }
-const WeatherTemperature = ({temperature, weatherState}) => (
+const WeatherTemperature = ({temperature, temperatureMin,temperatureMax,weatherState}) => (
     <div className="weatherTemperatureCont">
        {
            getWeatherIcon (weatherState)
         }
         <span className= "temperature">{`${temperature}`}</span>
         <span className= "temperatureType">{` C°`}</span>
+            <div className="divTemp">
+                <span className= "temperatureM">{`Min: ${temperatureMin}`}</span>
+                <span className= "temperatureMType">{`C°`}</span>
+                <span className= "temperatureM">{`Max: ${temperatureMax}`}</span>
+                <span className= "temperatureMType">{`C°`}</span>
+            </div>
+        
     </div>);
 
 WeatherTemperature.propTypes = {
