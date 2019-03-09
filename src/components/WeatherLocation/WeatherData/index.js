@@ -2,7 +2,7 @@
 import React from 'react';
 import WeatherExtraInfo from './weatherExtraInfo';
 import WeatherTemperature from './weatherTemperature';
-import '../styles.css';
+import './styles.css';
 import PropTypes from 'prop-types';
 
 const WeatherData = ({data:{temperature,temperatureMin,temperatureMax,humidity,wind,weatherState}}) => (

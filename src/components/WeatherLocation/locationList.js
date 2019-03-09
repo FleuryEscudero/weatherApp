@@ -1,12 +1,13 @@
 import React from 'react';
-import WeatherLocation from '.';
+import WeatherLocation from './index';
 import PropTypes from 'prop-types';
+import './lstyles.css';
 
 
 
 const LocationList = ({cities, onSelectedLocation})=> {
     const handleWeatherLocationClick = city => {
-        console.log("handleWeatherLocationClick");
+        //console.log("handleWeatherLocationClick");
         onSelectedLocation(city);
     };
     const strToComponents = cities => (
