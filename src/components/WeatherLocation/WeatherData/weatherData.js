@@ -5,7 +5,8 @@ import WeatherTemperature from './weatherTemperature';
 import './styles.css';
 import PropTypes from 'prop-types';
 
-const WeatherData = ({data:{temperature,temperatureMin,temperatureMax,humidity,wind,weatherState}}) => (
+const WeatherData = ({data:{temperature,temperatureMin,
+                      temperatureMax,weatherState,humidity,wind,}}) => (
 
     <div className="weatherDataCont">
         <WeatherTemperature 
