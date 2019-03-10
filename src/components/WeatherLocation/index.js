@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Location from './location';
-import WeatherData from './WeatherData/weatherData';
+import WeatherData from './WeatherData/index';
 import './wstyles.css';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import transformWeather from '../../services/transformWeather';
@@ -33,7 +33,7 @@ import PropTypes from 'prop-types';
               
     handleUpdateClick = () =>{
 
-        fetch(getUrlWeatherbyCity(this.state.city)).then(resolve => {
+        fetch(getUrlWeatherbyCity(this.props.city)).then(resolve => {
            
             return resolve.json();
         }).then(data=>{
