@@ -1,7 +1,7 @@
 import {SUN,RAIN,SNOW,THUNDER,DRIZZLE,CLOUDY} from '../constants/weather';
 
     const  getWeatherState = weather => {
-       const {id} = weather;
+       const {id} = weather[0];
        if (id <300){
            return THUNDER;
        }else if(id <400){
@@ -19,8 +19,9 @@ import {SUN,RAIN,SNOW,THUNDER,DRIZZLE,CLOUDY} from '../constants/weather';
     }
 
     const transformWeather = weatherData =>{
+        const { weather } = weatherData;
         const {humidity, temp,temp_min,temp_max} = weatherData.main;
-        const {weatherState} = getWeatherState(weatherData.weather[0]);
+        const weatherState = getWeatherState(weather);
         const {speed} = weatherData.wind;
         
         //debugger;
