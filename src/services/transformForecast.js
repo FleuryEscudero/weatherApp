@@ -9,11 +9,13 @@ const transformForecast = data =>(
         moment.unix(item.dt).hour() === 12 ||
         moment.unix(item.dt).hour() === 18
     //map es una funcion que nos hace la transformacion de la informacion para poder ser utilizada
-        )).map(item =>({
-            weekday: moment.unix(item.dt).format('ddd'),
+    )).map(item => (
+        {
+            weekDay: moment.unix(item.dt).format('ddd'),
             hour: moment.unix(item.dt).hour(),
             data: transformWeather(item)
-        }))
+        }
+        ))
 );
 
      export default transformForecast;

@@ -24,11 +24,6 @@ import {SUN,RAIN,SNOW,THUNDER,DRIZZLE,CLOUDY} from '../constants/weather';
         const weatherState = getWeatherState(weather);
         const {speed} = weatherData.wind;
         
-        //debugger;
-        /* var temp2 = Math.round((temp-273.15)*100)/100;
-        var tempMin2 = Math.round((temp_min-273.15)*100)/100;
-        var tempMax2 = Math.round((temp_max-273.15)*100)/100;*/
-
         const data = {
             
             humidity,
