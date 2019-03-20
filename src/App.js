@@ -7,6 +7,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import './App.css';
 import LocationList from './components/WeatherLocation/locationList';
 import ForecastExtended from './components/WeatherLocation/ForeCastExtended';
+import { setCity } from './actions/';
+import { connect } from 'react-redux';
 
 const cities = [
   'Mexico, MX',
@@ -15,6 +17,11 @@ const cities = [
   'New York, US',
   'Los Angeles, US'
 ]
+
+
+
+
+
 
 class App extends Component {
 
@@ -27,8 +34,11 @@ constructor (){
   
   handleSelectedLocation = city => {
     this.setState({city});
-    // console.log(`handleSelectedLocation ${city}`) 
+    // console.log(`handleSelectedLocation ${city}`)      
+      this.props.setCity(city);
   }
+
+
   render() {
     const {city} = this.state;
     return (
@@ -63,4 +73,13 @@ constructor (){
   }
 }
 
-export default App;
+
+
+
+const mapDispatchToPropsActions = dispatch =>({
+  setCity: value => dispatch(setCity(value))
+});
+
+const AppConnected = connect (null, mapDispatchToPropsActions)(App);
+
+export default AppConnected;
